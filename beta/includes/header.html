@@ -1,0 +1,67 @@
+<style>
+    header {
+    background: #fff; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #225870; text-align: center; padding: 50px 0;
+    position: fixed; top: 0; width: 100%;height: 70px; z-index: 99000;
+    display: flex; flex-direction: row; justify-content: space-around; align-items: center;
+    }
+
+    #logo:hover {cursor: pointer;transform: scale(1.05) translateX(20px);transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;}
+    #logo {transition: transform 0.4s ease-in-out;}
+
+    nav ul {list-style: none; display: flex; justify-content: center; width: 100%; padding: 0;}
+    nav ul li {padding: 0 30px} /*ul li*/@media(max-width: 1200px){nav ul li {padding: 0 10px;}}/*ul li*/
+    nav ul li a {color: #235c76;text-decoration: none;border-radius: 2px;transition: 0.3s ease-in-out;font-size: 15px;
+        font-weight:700;letter-spacing: 2px;
+    }
+    nav ul li a:hover {
+        box-sizing:content-box;
+        text-decoration:double underline #d3d3d3c0 0.5px;color: #fff;
+        background-color: #35a6b3; padding: 8px 0;
+        transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out, padding 0.2s ease-in-out;
+    }
+    #contacto {background-color: #235c76;color: #fff; padding: 10px 20px;border-radius: 8px;
+        transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out, padding 0.2s ease-in-out;
+    }
+    #contacto:hover {background-color: #35a7b3;padding: 14px 24px;}
+
+    /* Ícono de hamburguesa */
+    .menu-icon {display: none;flex-direction: column; z-index: 99999;cursor: pointer;}
+    .menu-icon span {background: #225870;transition: 0.3s ease;height: 4px; width: 30px;margin: 4px 0; border-radius: 10px;top:0;}
+    #menu-toggle {display: none;}
+    /* Estado activo del menú ("X" Botón de cierre) */
+    #menu-toggle:checked + .menu-icon span:nth-child(1) {transform: rotate(45deg) translate(9px, 10px);}
+    #menu-toggle:checked + .menu-icon span:nth-child(2) {opacity: 0;}
+    #menu-toggle:checked + .menu-icon span:nth-child(3) {transform: rotate(-45deg) translate(7px, -8px);}
+
+    @media (max-width: 950px) {
+        header{margin:0;justify-content: space-evenly}
+        .menu-icon {display: flex;}
+        nav ul {display: none;flex-direction: column;background-color: #fff;
+                position: absolute;top: 70px;left: 0;width: 100%;text-align: center;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);padding: 20px 0;
+        }
+        #menu-toggle:checked + .menu-icon + nav ul {display: flex;margin-top:20px;}
+        nav ul li {padding: 8px 0;}
+        nav ul li a:hover {text-decoration:none;}
+    }
+</style>
+
+
+<header id="header">
+    <h1 style="display:none">L&H Outsourcing</h1>
+    <a href="./index.html">
+        <img src="img/L&H.webp" id="logo" alt="L&H Outsourcing" class="logo" style="height:70px;width:auto;"/>
+    </a>      
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="menu-icon"><span></span><span></span><span></span></label>
+    <nav>
+        <ul>
+            <li><a href="#prev">Servicios</a></li>
+            <li><a href="#prev">Testimonios</a></li>
+            <li><a href="#prev">Nosotros</a></li>
+            <li><a href="#prev">Publicaciones</a></li>
+            <li><a href="#prev" id="contacto">Contacto</a></li>
+        </ul>
+    </nav>
+</header>

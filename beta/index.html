@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="L&H Outsourcing - Servicios para el Sector Salud en Bogotá.">
+        <meta name="L&H Outsourcing" content="L&H Outsourcing">
+        <title>L&H Outsourcing</title>
+        <link rel="icon" href="img/favicon.webp">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <style>
+            * {box-sizing: border-box;}
+            body {font-family: "Noto Sans", sans-serif; margin: 0; padding: 0; background-color: #f4f4f4;}
+            body {padding-top: 90px;width: 100%;height: auto;overflow-x: hidden;}
+        </style>
+        <link rel="stylesheet" href="styles.css">
+        <script defer>
+            function includeHTML(id, path) {fetch(path).then(response => {if (!response.ok) throw new Error(`Error al cargar ${path}`);return response.text();}).then(html => {document.getElementById(id).innerHTML = html;}).catch(error => {console.error(error);});}
+            document.addEventListener("DOMContentLoaded", function () { includeHTML("header", "includes/header.html"); includeHTML("footer", "includes/footer.html");});
+        </script>
+
+    </head>
+
+    <body>
+        <div id="header"></div>
+        <div class="hero">
+            <div class="hero-text">
+                <h2><span>Outsourcing</span> Especializado en el <span id="sectorsalud">Sector Salud</span></h2>
+                <div class="tags">
+                    Consultoría y Auditoría • Habilitación IPS • Dotación • Infraestructura • Capacitación • Seguridad y Salud en el Trabajo • Contabilidad en Salud • Reporte Circular Única
+                </div>
+                <span class="highlight">Ofrecemos los servicios que llevarán a tu empresa al siguiente nivel</span>
+                <p>Entendemos los retos únicos del sector salud y ofrecemos soluciones precisas que optimizan la gestión operativa y regulatoria, con respaldo profesional y enfoque estratégico.</p>            
+                <a href="https://wa.me/573204522789" target="_blank" class="cta-button">¡Cotiza nuestros servicios!</a>
+            </div>
+            <div class="hero-image">
+                <img src="img/hero-img.webp" alt="Auditoría en Salud" class="hero-img">
+            </div>
+        </div>
+
+        <main>
+            <br><br><br>
+            <!--<section id="servicios">
+                <h2>Servicios</h2>
+                <p>Servicios de la empresa.</p>
+            </section>
+            <section id="nosotros">
+                <h2>Nosotros</h2>
+                <p>Información de la empresa.</p>
+            </section>
+            <section id="contacto-card">
+                <h2>Contacto</h2>
+                <p>Información y enlaces de contacto.</p>
+            </section>-->
+
+            <section id="prev" style="width: 100%; height: auto;">
+                <iframe src="../index.html" style="width: 100%; height: 800px; border: none;"></iframe>
+            </section>
+        </main>
+        <br><br><br>
+
+        <div id="footer"></div>
+        <a href="https://wa.me/573204522789" class="whatsapp-button" target="_blank">
+            <img src="img/wtts.svg">
+        </a>
+        
+        <div id="mensajeRCP">L&H Outsourcing SAS &copy; Con todos los derechos reservados</div>
+        <script>
+            document.addEventListener('contextmenu', function (e) {
+                e.preventDefault();
+                const m = document.getElementById('mensajeRCP');
+                m.style.left = e.pageX + 10 + 'px';
+                m.style.top = e.pageY + 10 + 'px';
+                m.style.display = 'block';
+                document.addEventListener('mousemove', f);
+                setTimeout(() => {
+                    m.style.display = 'none';
+                    document.removeEventListener('mousemove', f);
+                }, 3000);
+            });
+    
+            function f(e) {
+                const m = document.getElementById('mensajeRCP');
+                m.style.left = e.pageX + 10 + 'px';
+                m.style.top = e.pageY + 10 + 'px';
+            }
+    
+            document.addEventListener('click', function () {
+                const m = document.getElementById('mensajeRCP');
+                m.style.display = 'none';
+                document.removeEventListener('mousemove', f);
+            });
+    
+            // Prevenir la selección de imágenes
+            document.addEventListener('selectstart', function (e) {
+                if (e.target.tagName.toLowerCase() === 'img') {
+                    e.preventDefault();
+                }
+            });
+    
+            // Prevenir el arrastre de imágenes
+            document.querySelectorAll('img').forEach(function (img) {
+                img.setAttribute('draggable', 'false');
+                img.addEventListener('dragstart', function (e) {
+                    e.preventDefault();
+                });
+            });
+            // Prevent Ctrl+C (Copy)
+            document.addEventListener('keydown', function (e) {
+                if (e.ctrlKey && e.key === 'c') {
+                    e.preventDefault();
+                    const m = document.getElementById('mensajeRCP');
+                    m.style.left = e.pageX + 10 + 'px';
+                    m.style.top = e.pageY + 10 + 'px';
+                    m.style.display = 'block';
+                    setTimeout(() => {
+                        m.style.display = 'none';
+                    }, 3000);
+                }
+            });
+        </script>
+    </body>
+</html>
+
+    <!--<script>
+        // Prevenir la selección en dispositivos móviles
+        document.addEventListener('touchstart', function (e) {
+            e.preventDefault();  // Prevenir la selección del texto en pantallas táctiles
+        });
+        // Opcionalmente,  agregar una advertencia
+        // document.addEventListener('selectstart', function (e) {
+        //     alert("La selección de texto está deshabilitada en este sitio.");
+        //     e.preventDefault();  // Evitar la acción de seleccionar texto
+        // });
+    </script>-->
+
+

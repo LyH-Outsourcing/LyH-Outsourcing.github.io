@@ -1,0 +1,20 @@
+#mensajeRCP {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: none;
+    font-size: 12px;
+    pointer-events: none;
+    z-index: 9999999999999;
+}
+
+@media (max-width:950px) {
+    body{
+        user-select: none;/*CSS para navegadores modernos*/
+        -webkit-user-select: none;/*Safari*/
+        -moz-user-select: none;/*Firefox*/
+        -ms-user-select: none;/*Edge/Explorer*/
+    }
+}

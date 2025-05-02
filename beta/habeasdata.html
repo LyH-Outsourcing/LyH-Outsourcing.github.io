@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="L&H Outsourcing - Servicios para el Sector Salud en Bogotá.">
+        <meta name="L&H Outsourcing" content="L&H Outsourcing">
+        <title>Habeas Data | L&H Outsourcing</title>
+        <link rel="icon" href="img/favicon.webp">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <style>
+            * {box-sizing: border-box;}
+            body {font-family: "Noto Sans", sans-serif; margin: 0; padding: 0; background-color: #f4f4f4;}
+            body {padding-top: 90px;width: 100%;height: auto;overflow-x: hidden;}
+        </style>
+        <link rel="stylesheet" href="styles.css">
+        <script defer>
+            function includeHTML(id, path) {fetch(path).then(response => {if (!response.ok) throw new Error(`Error al cargar ${path}`);return response.text();}).then(html => {document.getElementById(id).innerHTML = html;}).catch(error => {console.error(error);});}
+            document.addEventListener("DOMContentLoaded", function () { includeHTML("header", "includes/header.html"); includeHTML("footer", "includes/footer.html");});
+        </script>
+        <style>
+            .habeas-data-section {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 40px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+            }
+
+            .habeas-data-section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #222;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+            }
+
+            .habeas-data-section p {
+            line-height: 1.6;
+            margin-bottom: 16px;
+            }
+
+            .habeas-data-section ul {
+            margin-left: 20px;
+            }
+
+            .habeas-data-section a {
+            color: #0056b3;
+            text-decoration: none;
+            }
+
+            .habeas-data-section a:hover {
+            text-decoration: underline;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="header"></div>
+        <main>
+            <section class="habeas-data-section">
+                <h2>Política de Protección de Datos - Habeas Data</h2>
+                <p>
+                  En cumplimiento de la Ley de Protección de Datos Personales, informamos a nuestros usuarios y clientes que tienen derecho a conocer, actualizar, rectificar y suprimir los datos personales almacenados en nuestras bases de datos.
+                </p>
+                <p>
+                  Al proporcionar sus datos personales, usted autoriza su tratamiento conforme a nuestra política de privacidad, disponible en el siguiente enlace:
+                  <a href="/politica-de-privacidad.pdf" target="_blank">Política de Privacidad</a>.
+                </p>
+                <p>
+                  Usted puede ejercer sus derechos mediante solicitud escrita dirigida a nuestro Oficial de Protección de Datos, a través del correo:
+                  <a href="mailto:protecciondedatos@ejemplo.com">protecciondedatos@ejemplo.com</a>.
+                </p>
+                <p>
+                  Derechos que puede ejercer:
+                </p>
+                <ul>
+                  <li>Conocer y acceder a su información personal.</li>
+                  <li>Solicitar la corrección de datos inexactos.</li>
+                  <li>Solicitar la eliminación de sus datos cuando sea procedente.</li>
+                  <li>Revocar la autorización para el tratamiento de datos.</li>
+                </ul>
+              </section>
+            
+            
+        </main>
+        <br><br><br>
+        <div id="footer"></div>
+
+
+        <a href="https://wa.me/573204522789" class="whatsapp-button" target="_blank">
+            <img src="img/wtts.svg">
+        </a>
+        
+        <div id="mensajeRCP">L&H Outsourcing SAS &copy; Con todos los derechos reservados</div>
+        <script>
+            document.addEventListener('contextmenu', function (e) {
+                e.preventDefault();
+                const m = document.getElementById('mensajeRCP');
+                m.style.left = e.pageX + 10 + 'px';
+                m.style.top = e.pageY + 10 + 'px';
+                m.style.display = 'block';
+                document.addEventListener('mousemove', f);
+                setTimeout(() => {
+                    m.style.display = 'none';
+                    document.removeEventListener('mousemove', f);
+                }, 3000);
+            });
+    
+            function f(e) {
+                const m = document.getElementById('mensajeRCP');
+                m.style.left = e.pageX + 10 + 'px';
+                m.style.top = e.pageY + 10 + 'px';
+            }
+    
+            document.addEventListener('click', function () {
+                const m = document.getElementById('mensajeRCP');
+                m.style.display = 'none';
+                document.removeEventListener('mousemove', f);
+            });
+    
+            // Prevenir la selección de imágenes
+            document.addEventListener('selectstart', function (e) {
+                if (e.target.tagName.toLowerCase() === 'img') {
+                    e.preventDefault();
+                }
+            });
+    
+            // Prevenir el arrastre de imágenes
+            document.querySelectorAll('img').forEach(function (img) {
+                img.setAttribute('draggable', 'false');
+                img.addEventListener('dragstart', function (e) {
+                    e.preventDefault();
+                });
+            });
+            // Prevent Ctrl+C (Copy)
+            document.addEventListener('keydown', function (e) {
+                if (e.ctrlKey && e.key === 'c') {
+                    e.preventDefault();
+                    const m = document.getElementById('mensajeRCP');
+                    m.style.left = e.pageX + 10 + 'px';
+                    m.style.top = e.pageY + 10 + 'px';
+                    m.style.display = 'block';
+                    setTimeout(() => {
+                        m.style.display = 'none';
+                    }, 3000);
+                }
+            });
+        </script>
+    </body>
+</html>
+
+    <!--<script>
+        // Prevenir la selección en dispositivos móviles
+        document.addEventListener('touchstart', function (e) {
+            e.preventDefault();  // Prevenir la selección del texto en pantallas táctiles
+        });
+        // Opcionalmente,  agregar una advertencia
+        // document.addEventListener('selectstart', function (e) {
+        //     alert("La selección de texto está deshabilitada en este sitio.");
+        //     e.preventDefault();  // Evitar la acción de seleccionar texto
+        // });
+    </script>-->
+
+

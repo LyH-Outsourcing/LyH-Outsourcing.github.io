@@ -1,0 +1,53 @@
+.whatsapp-button {
+    position: fixed;
+    bottom: 30px;
+    right: 20px; 
+    background-color: #25D366; 
+    width: 64px;
+    height: 64px;
+    border-radius: 50%; 
+    display: flex;
+    align-items: center;  
+    justify-content: center; 
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 10000;
+    transition: transform 0.3s ease-in-out, background-color 0.3s;
+}
+.whatsapp-button:hover {background-color: #16a04d; transform: scale(1.2);}
+
+/* Estilo del globo de mensaje */
+.whatsapp-button::after {
+    content: "Comunicate por WhatsApp"; /* Texto del globo */
+    position: absolute;
+    bottom: 50%; 
+    right: 100%; 
+    transform: translateY(50%); 
+    background-color: #1e537a;
+    color: white;
+    padding: 8px 12px;
+    font-size: 15px;
+    border-radius: 5px;
+    margin-right:10px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+/* Flecha pequeña para que parezca un globo de mensaje */
+.whatsapp-button::before {
+    content: "";
+    position: absolute;
+    bottom: 50%;
+    right: calc(100% - 5px);
+    transform: translateY(50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent transparent #333;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+}
+.whatsapp-button:hover::after,
+.whatsapp-button:hover::before {opacity: 1; visibility: visible;}
