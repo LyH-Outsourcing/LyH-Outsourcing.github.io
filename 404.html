@@ -1,16 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Not Found</title>
-    <script>
-        // Redirigir automáticamente a la página principal
-        window.location.href = "https://lhoutsourcing.com";
-    </script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#eaeaea">
+<title>404 - Página no encontrada | L&H Outsourcing SAS</title><link rel="icon" href="img/favicon.webp">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    :root {--c1: #225870;--c2: #0492a1;--c3: #00b14a;--text-dark: #1a1a1a;--gray-light: #f5f5f5;}
+    * {box-sizing: border-box;margin: 0;padding: 0;}
+    body {font-family: 'Noto Sans', sans-serif;background-color: #eaeaea;color: var(--text-dark);display: flex;flex-direction: column;justify-content: center;align-items: center;height: 100vh;padding: 20px;text-align: center;cursor:not-allowed}
+
+    h1 {max-width: 420px;font-size: 62px;font-weight: 700;color: var(--c1);line-height: 20px;margin-bottom: 40px;}
+    span{font-size: 24px;color: #444;}
+
+    a {display: inline-block;text-decoration: none;background-color: var(--c3);color: #fff;padding: 12px 28px;border-radius: 6px;font-size: 1rem;transition: background-color 0.3s ease;transition: transform 0.3s ease-in-out;box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);}
+    a:hover {background-color: #00973f;transform: scale(1.1);}
+
+    footer {margin-top: 40px;font-size: 0.9rem;color: #535353;}
+
+    @media (max-width: 400px) {#logo404{width:180px;height:auto;}
+    h1 {width:180px;font-size: 28px;line-height: 1.1;margin-bottom: 16px;text-align: center;margin:0 auto}
+    span {width:180px;font-size: 16px;text-align: center;display: block;margin-bottom: 16px;color: #555;}
+    a {padding: 8px 20px;font-size: 0.9rem;width: auto;display: inline-block;text-align: center;margin: 0 auto;}
+    footer {font-size: 0.7rem;text-align: center;margin-top: 20px;color: #666;}
+    }
+</style>
 </head>
-<body>
-    <h1>404 - Página no encontrada</h1>
-    <p>Serás redirigido automáticamente a la página principal. Si no ocurre, haz clic <a href="https://lhoutsourcing.com">aquí</a>.</p>
-</body>
+<body><main><img id="logo404" src="https://lhoutsourcing.com/img/L&H.webp" style="max-width:400px;height:auto;padding: 40px 0;"><h1>404<span> - La página que buscas no existe o ha sido deshabilidata.</span></h1><a href="/">Volver al inicio</a><footer>&copy; L&H Outsourcing SAS – Con todos los derechos reservados<div id="mensajeRCP">&copy;  L&H Outsourcing SAS. Con todos los derechos reservados<script src="beta/includes/rcp.js"></script><style>#mensajeRCP {position: absolute;background-color: var(--c1);opacity: 0.9;color: white;padding: 5px 10px;border-radius: 5px;display: none;font-size: 12px;pointer-events: none;z-index: 9999999999999;}@media (max-width:950px) {body{user-select: none;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;}}</style></footer></main></div></body>
 </html>
