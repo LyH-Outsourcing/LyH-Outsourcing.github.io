@@ -1,13 +1,15 @@
 @import url('./css/hero.css');
 @import url('./css/wtts.css');
-@import url('./css/rcp.css');
+@import url('./css/servicios.css');
+@import url('./css/testimonios.css');
+@import url('./css/acerca.css');
+@import url('./css/stats.css');
+@import url('./css/publicaciones.css');
+@import url('./css/contacto.css');
+@import url('./css/custom-cursor.css');
+@import url('./css/volver.css');
 
-main {padding: 20px;width:100%;height:auto;}
+main {width:100%;height:auto;}
+section {padding: 40px 0;overflow-x:hidden;}
 
-section {
-    margin-bottom: 2rem;
-    background: #fff;
-    padding: 1rem;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+#scrollProgressBar {position: fixed;bottom: 0;left: 0;width: 0;height: 8px;z-index: 101000;background: linear-gradient(to right, var(--c1),var(--c2), var(--c3) 58%);transition: width 0.1s ease-out; transform-origin: left center; border-radius: 0 20px 20px 0;box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.2), 8px -5px 5px rgba(0, 0, 0, 0.1), 0 0 10px var(--primary);}.scroll-progress-bar[style*="100%"] {box-shadow: 0 0 10px var(--primary);height: 4px;}.scroll-progress-bar::-webkit-progress-bar {background-color: transparent;}.scroll-progress-bar::-webkit-progress-value {background-color: var(--primary);border-radius: 0 0 0 0;transition: width 0.1s ease;}

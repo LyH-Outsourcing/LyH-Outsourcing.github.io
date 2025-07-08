@@ -1,45 +1,142 @@
-/*hero.css*/
 .hero {
-  background: linear-gradient(135deg, #3a7994 0%, #3c8c91 72%, #8ae2ae 100%);
-  display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap;
-  width:100%; padding: 50px 0; border-radius: 12px;
+  background: linear-gradient(135deg, var(--c1) -40%, var(--c2) 50%, #53b6ae 72%, #78ecbe 100%);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  padding: 50px 0;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
 }
-.hero-text {max-width: 600px;color:#fff;
-  display: flex; flex-direction: column; margin: 0;
+.hero-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap:40px;
+}
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  color: #fff;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  width: 50%;
+  cursor:default;
 }
-.hero h2 {font-size: 42px;font-weight: 700;margin: 0;}
-.hero .tags {max-width: 550px;color: #d3d3d3;font-size: 14px;text-align: justify;margin: 12px 0;}
-.highlight {font-weight: 700;color: #ffffff;font-size: 24px;margin: 0 0;max-width: 550px;}
-.hero p {margin: 12px 0;line-height: 1.6;text-align: justify;max-width: 580px;}
-
-.cta-button {background-color: #00b14a;color: #ffffff;
-  padding: 15px 0;border: none;border-radius: 8px; margin: 12px 0; width:52%;
-  font-size: 18px;  text-align: center; font-weight: bold; text-decoration: none;text-shadow:none;
+.hero h2 {
+  font-size: 42px;
+  font-weight: 700;
+  margin: 0;
+}
+.hero .tags {
+  color: #d3d3d3;
+  font-size: 14px;
+  text-align: justify;
+  margin: 12px 0;
+}
+.highlight {
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 24px;
+  margin: 0 0;
+  max-width: 550px;
+}
+.hero p {
+  line-height: 1.6;
+  text-align: left;
+}
+.cta-button {
+  background-color: var(--c3);
+  color: #ffffff;
+  padding: 15px 0;
+  border: none;
+  border-radius: 8px;
+  width: 52%;
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: none;
   transition: background-color 0.3s;
 }
-.cta-button:hover {background-color: #1ebe57;}
+.cta-button:hover {
+  background-color: #1ebe57;
+}
+.hero-image {
+  margin: auto;
+  position: relative;
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease;
+}
+.hero-image img {
+  width: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  display: block;
+}
+.hero-image::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: 5px solid transparent;
+  border-radius: 12px;
+  box-sizing: border-box;
+  pointer-events: none;
+  z-index: 2;
+  transition: border-color 0.4s ease;
+}
+.hero-image:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+.hero-image:hover::before {
+  animation: borderSweep 0.75s linear forwards;
+}
+@keyframes borderSweep {
+  0% {
+    border-color: transparent;
+    border-top-color: var(--c1);
+  }
+  25% {
+    border-right-color: var(--c2);
+  }
+  50% {
+    border-bottom-color: var(--c3);
+  }
+  75% {
+    border-left-color: var(--c3);
+  }
+  100% {
+    border-color: var(--c1);
+  }
+}
 
-.hero-image {position: relative;max-width: 400px;}
-.hero-image img {width: 100%;border-radius: 10px;box-shadow: 0 10px 30px rgba(0,0,0,0.3);}
-
-@media (max-width: 950px) {
+@media (max-width: 1199px) {
   .hero {
     flex-direction: column;
     align-items: center;
     padding: 30px 0;
-    background: linear-gradient(180deg, #3a7994 0%, #3c8c91 80%, #8ae2ae 100%);
-  }
+    overflow-x:hidden;
 
-  .hero-text {max-width: 80%;}
+  }
+  .hero-container {
+    flex-direction: column;
+    align-items: center;
+    gap:20px;    
+  }
+  
+  .hero-text {width: 80%;}
   .hero h2 {font-size: 32px;line-height: 50px;text-align: center;}
   .hero h2 span{font-size: 50px;}#sectorsalud{font-size: 50px;}
   .hero .tags{font-size:11px;}
   .highlight{font-size:18px;text-align: justify;}
   .hero p {font-size: 14px;}
   .cta-button {width: 100%;}
-  .hero-image {max-width: 300px;padding: 8px 0;}
+  .hero-image {width:80%}
+  .hero-image img{width: 100%;}
 }
 
 @media (max-width: 385px) {

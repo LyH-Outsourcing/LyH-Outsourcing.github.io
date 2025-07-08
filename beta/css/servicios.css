@@ -1,0 +1,83 @@
+#servicios {
+  padding: 120px 0;text-align: center;
+  position: relative;background: linear-gradient(to top, #f4fbff, rgba(0, 0, 0, 0));box-shadow: none;
+  display: flex; flex-direction: row; justify-content: center; align-items: center;
+}
+@media (max-width:950px){#servicios{padding: 80px 0;}}
+
+#servicios::before {
+  content: "";
+  display: block;
+  position: absolute;
+  /* top: 0; */
+  bottom:0;
+  left: 0;
+  height: 12px;
+  width: 100%;
+  background: linear-gradient(90deg, #225870, #0392a1, #00b14a, #0392a1, #225870);
+  background-size: 300% 100%;
+  animation: gradientOscillation 8s ease infinite;
+  z-index: 1;
+}
+@keyframes gradientOscillation{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
+
+
+.servicios-limitador{
+  max-width: 1300px;width: 100%;display: flex; flex-direction: row; justify-content: space-between; align-items: center;}
+@media (max-width:950px){#servicios, .servicios-limitador {flex-direction: column;}}
+
+.ser-1{display: flex;flex-direction: column;width: 40%;justify-content:safe;align-items: center;cursor:default;}
+#servicios h2 {font-size: 40px;color: var(--c1);margin: 0;}
+#servicios .descripcion {width:70%;font-size: 1rem;color: #444;line-height: 2;text-align: left;font-style: italic;margin: 0;}
+.cta-area {text-align: center;margin-top: 20px;}
+.cta-servicios {width: 70%;display: inline-block;padding: 12px 24px;background-color: var(--c2);color: #fff;text-decoration: none;font-size: 16px;font-weight: bold;border-radius: 8px;transition: background-color 0.3s ease;}
+.cta-servicios:hover {background-color: var(--c3);}
+@media (max-width:950px){
+  .ser-1{width:100%;}
+  #servicios h2{font-size: 32px;}
+  #servicios .descripcion {width:84%;padding:12px 0;}
+  .cta-section{margin:0;}
+}
+
+.ser-2{display: flex;flex-direction: column;width: 60%;}
+.servicios-grid {display: grid;grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));gap: 12px;width: 90%;}
+.servicio-card {background-color: #e3e8e9c5;border-radius: 12px;color: var(--c1);position: relative;overflow: hidden;cursor:none;transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+/* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+}
+.servicio-card::before {content: "";position: absolute;top: 0; left: 0;width: 100%;height: 100%;border:4px solid transparent;border-radius: 12px;box-sizing: border-box;pointer-events: none;z-index: 2;transition: border-color 0.4s ease;}
+.servicio-card:hover {transform: translateY(-5px);box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);}
+.servicio-card:hover::before {animation: borderSweep 0.75s linear forwards;}
+@keyframes borderSweep {
+  0% {border-color: transparent;border-top-color: var(--c3);}
+  25% {border-right-color: var(--c1);}
+  50% {border-bottom-color: var(--c1);}
+  75% {border-left-color: var(--c1);}
+  100% {border-color: var(--c2);}
+}
+.servicio-card::after {
+  content: "Haz clic para ver más";
+  position: absolute;
+  bottom: 10px;
+  display: flex;
+  background-color: #1e537a;
+  color: white;
+  padding: 8px 12px;
+  font-size: 15px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  z-index: 10;
+  transform: translateY(-10px);
+  }
+.servicio-card:hover::after {opacity: 1;visibility: visible;transform: translateY(0);}
+.servicio-card img {width: 100%;height: 80px;object-fit: cover;transition: transform 0.4s ease-in-out;mask-image: linear-gradient(to bottom, #2d4042 80%, rgba(0, 51, 102, 0) 100%);-webkit-mask-image: linear-gradient(to bottom, #2d4042 80%, rgba(0, 51, 102, 0) 100%);}
+.servicio-card:hover img {transform: scale(1.05);}
+.servicio-card h3 {margin: 0;padding-top: 2px;padding-bottom: 12px;color: var(--c1);mix-blend-mode:darken;letter-spacing: 1px;font-weight: 500;}
+
+@media (max-width:950px){
+  .ser-2{width:100%;padding: 40px 0;}
+  .servicios-grid {padding: 0 40px;grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));gap: 2rem;width: 100%;}
+  .servicio-card img {height: 70px;}
+}

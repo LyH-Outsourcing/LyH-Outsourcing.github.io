@@ -1,0 +1,442 @@
+<style>
+      /* :root {--c1: #2c3e50;--c2: #3498db;--c3: #2980b9;--c4: #e74c3c;--c5: #ecf0f1;} */
+  #contacto {
+    padding: 20px 0;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 80px;
+  }
+  
+  #contacto::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: -100px;
+    width: 300px;
+    height: 120px;
+    background: var(--c2);
+    opacity: 0.3;
+    border-radius: 12px;
+  }
+  
+  #contacto::after {
+    content: "";
+    position: absolute;
+    bottom: 120px;
+    right: 12px;
+    width: 300px;
+    height: 300px;
+    background: var(--c3);
+    opacity: 0.3;
+    clip-path: polygon(10% 50%, 30% 70%, 70% 30%, 80% 40%, 30% 90%, 0% 60%);
+    border-radius: 50%;
+  }
+  
+  .contacto-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .contacto-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  .contacto-titulo {
+    font-size: 54px;
+    color: var(--c1);
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .contacto-titulo::after {
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 4px;
+    background: var(--c2);
+    border-radius: 2px;
+  }
+  
+  .contacto-descripcion {
+    font-size: 1.3rem;
+    color: var(--c2);
+    max-width: 700px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+  }
+  
+  .contacto-contenido {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    align-items: stretch;
+  }
+  
+
+  
+  /* Tarjeta de información */
+  .info-card {
+    background: white;
+    padding: 32px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  }
+  
+  .info-card h3 , .formulario-animado h3{
+    font-size: 1.8rem;
+    color: var(--c1);
+    position: relative;
+    padding: 10px 0;
+    margin:0;
+  }
+  
+  .info-card h3::after , .formulario-animado h3::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--c2);
+    border-radius: 3px;
+  }
+  
+  .info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin: 25px 0;
+  }
+  
+  .info-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(52, 152, 219, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  
+  .info-icon svg {
+    width: 20px;
+    height: 20px;
+    color: var(--c2);
+  }
+  
+  .info-label {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 3px;
+  }
+  
+  .info-value {
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  .contacto-redes {
+    margin-top: 40px;
+  }
+  
+  .contacto-redes h4 {
+    font-size: 1.3rem;
+    color: var(--c1);
+    margin-bottom: 15px;
+  }
+  
+  .redes-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .contacto-red {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contacto-red svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .social-whatsapp {
+    background-color: #25d366;
+  }
+  
+  .social-whatsapp:hover {
+    background-color: #1da851;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(37, 211, 102, 0.3);
+  }
+  
+  .social-facebook {
+    background-color: #3b5998;
+  }
+  
+  .social-facebook:hover {
+    background-color: #2d4373;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(59, 89, 152, 0.3);
+  }
+  
+  .social-instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  }
+  
+  .social-instagram:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(220, 39, 67, 0.3);
+  }
+
+
+  .contacto-formulario, .contacto-info {
+    flex: 1 1 400px;
+    max-width: 500px;
+  }
+  
+  /* Formulario mejorado */
+  .formulario-animado {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .formulario-animado:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  }
+  
+  .contacto-campo {
+    margin-bottom: 30px;
+    position: relative;
+  }
+  
+  .contacto-campo input,
+  .contacto-campo textarea {
+    width: 100%;
+    padding: 15px 0 5px 0;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    font-size: 1rem;
+    background: transparent;
+    transition: all 0.3s ease;
+  }
+  
+  .contacto-campo textarea {
+    resize: none;
+    min-height: 80px;
+  }
+  
+  .contacto-campo label {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    color: #777;
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+  
+  .contacto-campo .underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--c2);
+    transition: width 0.4s ease;
+  }
+  
+  .contacto-campo input:focus,
+  .contacto-campo textarea:focus {
+    outline: none;
+    border-bottom-color: transparent;
+  }
+  
+  .contacto-campo input:focus ~ label,
+  .contacto-campo input:valid ~ label,
+  .contacto-campo textarea:focus ~ label,
+  .contacto-campo textarea:valid ~ label {
+    top: -5px;
+    font-size: 0.8rem;
+    color: var(--c2);
+  }
+  
+  .contacto-campo input:focus ~ .underline,
+  .contacto-campo textarea:focus ~ .underline {
+    width: 100%;
+  }
+  
+  .contacto-boton {
+    background: linear-gradient(45deg, var(--c2), var(--c3));
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .contacto-boton span {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .contacto-boton svg {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease;
+  }
+  
+  .contacto-boton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--c3), var(--c2));
+    transition: left 0.4s ease;
+    z-index: 1;
+  }
+  
+  .contacto-boton:hover {
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+  }
+  
+  .contacto-boton:hover::before {
+    left: 0;
+  }
+  
+  .contacto-boton:hover svg {
+    transform: translateX(5px);
+  }
+
+  
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .contacto-titulo {
+      font-size: 2.5rem;
+    }
+    
+    .contacto-descripcion {
+      font-size: 1.1rem;
+    }
+    
+    .contacto-formulario, .contacto-info {
+      flex: 1 1 100%;
+    }
+    
+    .info-card {
+      padding: 30px 20px;
+    }
+  }
+</style>
+
+
+
+<div class="contacto-container">
+    <div class="contacto-header">
+    <h2 class="contacto-titulo">Contáctanos</h2>
+    <p class="contacto-descripcion">¡Escríbenos si tienes preguntas o necesitas más información!</p>
+    <div class="contacto-underline"></div>
+    </div>      
+    <div class="contacto-contenido">
+        <div class="contacto-info">
+            <div class="info-card">
+            <h3>Información de Contacto</h3>
+            <div class="info-item">
+                <div class="info-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z"/></svg>
+                </div>
+                <div>
+                <p class="info-label">Teléfono</p>
+                <p class="info-value">+57 320 452 2789 </p>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="info-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"/><path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"/></svg>
+                </div>
+                <div>
+                <p class="info-label">Email</p>
+                <p class="info-value">contacto@lhoutsourcing.com</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="info-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/></svg>
+                </div>
+                <div>
+                <p class="info-label">Dirección</p>
+                <p class="info-value">Bogotá, Colombia</p>
+                </div>
+            </div> 
+            <div class="contacto-redes">
+                <h4>Síguenos en redes</h4>
+                <div class="redes-container">
+                <a href="https://wa.me/573204522789" target="_blank" class="contacto-red social-whatsapp">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M3.478 2.404a.75.75 0 00-.926.941l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.404z"/></svg>
+                    WhatsApp
+                </a>
+                <a href="https://www.facebook.com/" target="_blank" class="contacto-red social-facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8.25 10.875V20.25h4.125v-9.187H15l.375-3.375h-3.5V6.375c0-.534.328-.938.813-.938h2.625V2.25H13.25c-2.343 0-3.875 1.5-3.875 3.938v2.062H7v3.375h1.25z"/></svg>
+                    Facebook
+                </a>
+                <a href="https://www.instagram.com/" target="_blank" class="contacto-red social-instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.25c-2.429 0-4.817.178-7.152.521C2.87 3.061 1.5 4.795 1.5 6.741v10.518c0 1.947 1.37 3.68 3.348 3.97 2.335.343 4.723.521 7.152.521 2.429 0 4.817-.178 7.152-.521 1.978-.29 3.348-2.023 3.348-3.97V6.741c0-1.947-1.37-3.68-3.348-3.97A48.966 48.966 0 0012 2.25z"/></svg>
+                    Instagram
+                </a>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="contacto-formulario">
+            <form action="" method="POST" class="formulario-animado" id="formularioWEB-LhOutsourcing">
+            <!-- <h3>Escríbenos</h3><div class="contacto-campo"><input type="text" id="nombre" name="nombre" required><label for="nombre">Nombre</label><div class="underline"></div></div><div class="contacto-campo"><input type="email" id="email" name="email" required><label for="email">Correo Electrónico</label><div class="underline"></div></div><div class="contacto-campo"><textarea id="mensaje" name="mensaje" rows="3" required></textarea><label for="mensaje">Mensaje</label><div class="underline"></div></div><button type="submit" class="contacto-boton"><span>Enviar Mensaje</span><svg width="34" height="34" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="37" cy="37" r="35.5" stroke="white" stroke-width="3"></circle><path d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z" fill="white"></path></svg></button> -->
+            <!-- <iframe src="form.html" width="450" height="689" frameborder="0" marginheight="0" marginwidth="0" style=""></iframe> -->
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdMdTJNYeBinwGTn-SB7OlWzQRXQFXI8HtjI9oCfU3Ko_u6Hw/viewform?embedded=true" width="450" height="520" frameborder="0" marginheight="0" marginwidth="0" style=".RVEQke{background-color: #225870;}">Cargando…</iframe><style>.RVEQke{background-color: #225870}</style>
+            </form>
+        </div>
+    </div>
+</div> 

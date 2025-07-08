@@ -1,0 +1,39 @@
+ #stats {
+    position: relative;
+  background-color: var(--c2);
+    box-shadow: inset 0 15px 15px -10px rgba(239, 239, 239,0.3), 
+                inset 0 -15px 15px -10px rgba(239, 239, 239,0.3);
+  color: white; 
+    padding: 50px 20px; 
+    text-align: center;
+  }
+  #stats .stats-container {
+    display: flex; 
+    justify-content: space-around; 
+    flex-wrap: wrap; 
+    gap: 20px; 
+    max-width: 1200px; 
+    margin: 0 auto;
+  }
+  #stats .stat-item {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    flex: 1; 
+    min-width: 200px;
+  }
+  #stats .stat-item h3 {
+    font-size: 2.5rem; 
+    margin: 0;
+  }
+  #stats .stat-item p {
+    margin: 10px 0 0; 
+    font-size: 1rem;
+  }
+  #stats .stat-item:hover {
+    transform: translateY(-5px);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    cursor:default;
+  }
+  #stats .stat-item:hover ~ .stat-item,
+  #stats .stat-item:not(:hover) {
+    opacity: 0.75;
+  }

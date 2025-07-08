@@ -1,0 +1,103 @@
+#acerca {
+    margin:0;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .contenedor-nosotros {
+    width: 100%;
+    padding-left: 4%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    flex-wrap: wrap;
+  }
+  
+  .bloque-texto {
+    flex: 1;
+    max-width: 600px;
+    z-index: 2;
+  }
+  
+  .bloque-texto h2 {
+    font-size: 2.5rem;
+    color: #1e3a8a;
+    margin-bottom: 1.5rem;
+  }
+  
+  .bloque-texto p {
+    color: #444;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+  
+  .imagen-superior img {
+    position: absolute;
+    right: 0;
+    width: 45%;
+    max-width: 500px;
+    z-index: 1;
+  }
+  
+  .mision-vision {
+    margin-top: 6rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 3rem;
+    position: relative;
+  }
+  
+  .mision, .vision {
+    flex: 1;
+    min-width: 280px;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.07);
+  }
+  
+  .mision h3, .vision h3 {
+    color: #1e3a8a;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .mision p, .vision p {
+    color: #555;
+    line-height: 1.7;
+  }
+  
+  .imagen-inferior img {
+    position:relative;
+    left: -60px;
+    bottom: -30px;
+    width: 580px;
+    z-index: 0;
+    opacity: 0.9;
+    padding: 20px 0;
+  }
+  
+  @media (max-width: 900px) {
+    .contenedor-nosotros,
+    .mision-vision {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .imagen-superior img,
+    .imagen-inferior img {
+      position: relative;
+      width: 80%;
+      max-width: 400px;
+      margin-top: 2rem;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+  }

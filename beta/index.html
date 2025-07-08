@@ -1,137 +1,292 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="L&H Outsourcing - Servicios para el Sector Salud en Bogotá.">
-        <meta name="L&H Outsourcing" content="L&H Outsourcing">
-        <title>L&H Outsourcing</title>
-        <link rel="icon" href="img/favicon.webp">
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <style>
-            * {box-sizing: border-box;}
-            body {font-family: "Noto Sans", sans-serif; margin: 0; padding: 0; background-color: #f4f4f4;}
-            body {padding-top: 90px;width: 100%;height: auto;overflow-x: hidden;}
-        </style>
-        <link rel="stylesheet" href="styles.css">
-        <script defer>
-            function includeHTML(id, path) {fetch(path).then(response => {if (!response.ok) throw new Error(`Error al cargar ${path}`);return response.text();}).then(html => {document.getElementById(id).innerHTML = html;}).catch(error => {console.error(error);});}
-            document.addEventListener("DOMContentLoaded", function () { includeHTML("header", "includes/header.html"); includeHTML("footer", "includes/footer.html");});
-        </script>
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L&H Outsourcing</title> <link rel="icon" href="img/favicon.webp"> <meta name="theme-color" content="#fff">
+  <meta name="L&H Outsourcing" content="L&H Outsourcing">
+  <meta name="description" content="L&H Outsourcing - Servicios para el Sector Salud en Bogotá.">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <style>:root {--c1: #225870;--c2: #0492a1;--c3: #00b14a;} * {box-sizing: border-box;font-family: "Noto Sans", sans-serif;} body {margin: 0; padding: 0; background-color: #efefef; padding-top: 90px;width: 100%;height: auto;overflow-x: hidden;color:var(--c1)}</style>
+  <link rel="stylesheet" href="styles.css">
+  <script defer>document.addEventListener("DOMContentLoaded",()=>{["header","footer", "contacto"].forEach(id=>{fetch(`includes/${id}.html`).then(r=>r.ok?r.text():"").then(html=>document.getElementById(id).innerHTML=html).catch(()=>{});});});</script>  <script src="includes/rcp.js"></script>
+</head>
+<body>
+  <div id="header"></div>
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-text">
+          <h2><span>Outsourcing</span> Especializado en el <span id="sectorsalud">Sector Salud</span></h2><div class="tags">Consultoría y Auditoría • Habilitación IPS • Dotación • Infraestructura • Capacitación • Seguridad y Salud en el Trabajo • Contabilidad en Salud • Reporte Circular Única</div><span class="highlight">Ofrecemos los servicios que llevarán a tu empresa al siguiente nivel</span><p>Entendemos los desafíos del sector y ofrecemos soluciones que optimizan la gestión operativa y regulatoria, con enfoque estratégico y respaldo profesional.</p>
+          <a href="https://wa.me/573204522789" target="_blank" class="cta-button">¡Cotiza nuestros servicios!</a>
+      </div>
+      <div class="hero-image"><img src="img/hero-img.webp" alt="Auditoría en Salud" class="hero-img"></div>
+    </div>
+  </section>
+  <section id="servicios">
+    <div class="servicios-limitador">
+      <div class="ser-1">
+        <h2>Nuestros servicios</h2>
+        <hr style="border: 1px solid #0491a1a9 ; width: 40%;">
+        <p class="descripcion">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ut labore et dolore magna aliqua. Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+          </p>
+        <div class="cta-area"></div>
+          <a href="https://wa.me/573204522789" target="_blank" class="cta-servicios">Realiza una cotización</a>
+      </div>
+      <div class="ser-2">
+        <div class="servicios-grid">
+            <article class="servicio-card">
+                <img src="img/servicios/consultor.webp" alt="Consultoría">
+                <h3>Consultoría</h3>
+            </article>
+            <article class="servicio-card">
+              <img src="img/servicios/habilitacion.webp" alt="Habilitación IPS">
+              <h3>Habilitación IPS</h3>
+            </article>
+            <article class="servicio-card">
+                <img src="img/servicios/capacitacion_IA.webp" alt="Capacitación">
+                <h3>Capacitación</h3>
+            </article>
+            <article class="servicio-card">
+              <img src="img/servicios/obra.webp" alt="Infraestructura Clínica">
+              <h3>Infraestructura</h3>
+            </article>
+            <article class="servicio-card">
+              <img src="img/servicios/dotacion.webp" alt="Dotación Médica">
+              <h3>Dotación</h3>
+            </article>
+            <article class="servicio-card">
+              <img src="img/servicios/Contabilidad.webp" alt="Contabilidad">
+              <h3>Contabilidad</h3>
+            </article>
+          </div>
+      </div>
+    </div>
+  </section>
+  <div class="custom-cursor" id="customCursor">
+    <script defer>
+      const customCursor = document.createElement('div');
+      customCursor.classList.add('custom-cursor');
+      document.body.appendChild(customCursor);
+      // LISTA DE CLASES E IDS PERMITIDOS
+      const allowedSelectors = [
+        '.servicios-grid','.tarjeta-testimonio', // ← Clase permitida
+        '#cursorArea' ,    // ← ID permitido
+      ];
+      function isAllowedTarget(t){return allowedSelectors.some(s=>t.closest(s));}let mouseX=0,mouseY=0;document.addEventListener('mousemove',e=>{mouseX=e.clientX;mouseY=e.clientY;});function updateCursor(){const e=document.elementFromPoint(mouseX,mouseY);if(e&&isAllowedTarget(e)){customCursor.style.left=`${mouseX}px`;customCursor.style.top=`${mouseY}px`;customCursor.style.display='block';}else{customCursor.style.display='none';}requestAnimationFrame(updateCursor);}updateCursor();
+    </script>
+  </div>
+  <section id="testimonios">
+    <div class="contenedor-principal">
+      <div class="head-clientes">
+        <h2>Historias de Éxito</h2>
+        <p>Conoce cómo hemos ayudado a nuestros clientes</p>
+      </div>
 
-    </head>
+      <div class="testimonios-contenedor">
+            <div class="carrusel-testimonios">
 
-    <body>
-        <div id="header"></div>
-        <div class="hero">
-            <div class="hero-text">
-                <h2><span>Outsourcing</span> Especializado en el <span id="sectorsalud">Sector Salud</span></h2>
-                <div class="tags">
-                    Consultoría y Auditoría • Habilitación IPS • Dotación • Infraestructura • Capacitación • Seguridad y Salud en el Trabajo • Contabilidad en Salud • Reporte Circular Única
+              <div class="tarjeta-testimonio">
+                <div class="foto-cliente">
+                  <img src="img/servicios/explicacion.webp" alt="Dave Christensen">
+                  <div class="marca-cliente">
+                    <img src="https://static.wixstatic.com/media/459d14_57915366d92d45708d45d8d9f3a4af7e~mv2.png/v1/fill/w_264,h_204,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/459d14_57915366d92d45708d45d8d9f3a4af7e~mv2.png" alt="Global Logo">
+                  </div>
                 </div>
-                <span class="highlight">Ofrecemos los servicios que llevarán a tu empresa al siguiente nivel</span>
-                <p>Entendemos los retos únicos del sector salud y ofrecemos soluciones precisas que optimizan la gestión operativa y regulatoria, con respaldo profesional y enfoque estratégico.</p>            
-                <a href="https://wa.me/573204522789" target="_blank" class="cta-button">¡Cotiza nuestros servicios!</a>
+                <div class="contenido-testimonio">
+                  <blockquote>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                  </blockquote>
+                  <div class="info-cliente">
+                    <p class="nombre">Global Care Neurodiagnostic</p>
+                    <p class="cargo">Habilitación de IPS e Implementación Historia Clínica</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tarjeta-testimonio">
+                <div class="foto-cliente">
+                  <img src="https://isabelrestreponeurologa.com/wp-content/uploads/2019/11/ART1-Q-ES-NEUROLOGIA.jpg" alt="Dave Christensen">
+                  <div class="marca-cliente">
+                    <img src="https://static.wixstatic.com/media/459d14_57915366d92d45708d45d8d9f3a4af7e~mv2.png/v1/fill/w_264,h_204,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/459d14_57915366d92d45708d45d8d9f3a4af7e~mv2.png" alt="Global Logo">
+                  </div>
+                </div>
+                <div class="contenido-testimonio">
+                  <blockquote>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                  </blockquote>
+                  <div class="info-cliente">
+                    <p class="nombre">Global Care Neurodiagnostic</p>
+                    <p class="cargo">Habilitación de IPS e Implementación Historia Clínica</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tarjeta-testimonio">
+                <div class="foto-cliente">
+                  <img src="https://www.adom.com.co/wp-content/uploads/2024/07/Banner-nuestros-servicios-enfermeria.webp" alt="Dave Christensen">
+                  <div class="marca-cliente">
+                    <img src="https://static.wixstatic.com/media/459d14_57915366d92d45708d45d8d9f3a4af7e~mv2.png/v1/fill/w_264,h_204,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/459d14_57915366d92d45708d45d8d9f3a4af7e~mv2.png" alt="Global Logo">
+                  </div>
+                </div>
+                <div class="contenido-testimonio">
+                  <blockquote>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                  </blockquote>
+                  <div class="info-cliente">
+                    <p class="nombre">Global Care Neurodiagnostic</p>
+                    <p class="cargo">Habilitación de IPS e Implementación Historia Clínica</p>
+                  </div>
+                </div>
+              </div>
+          </div>
+          
+          <div class="controles-carrusel">
+            <button class="control-carrusel anterior">‹</button>
+            <div class="puntos-navegacion">
+              <span class="punto activo"></span>
+              <span class="punto"></span>
+              <span class="punto"></span>
             </div>
-            <div class="hero-image">
-                <img src="img/hero-img.webp" alt="Auditoría en Salud" class="hero-img">
-            </div>
+            <button class="control-carrusel siguiente">›</button>
+          </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded',function(){const carrusel=document.querySelector('.carrusel-testimonios');const tarjetas=document.querySelectorAll('.tarjeta-testimonio');const btnAnterior=document.querySelector('.anterior');const btnSiguiente=document.querySelector('.siguiente');const puntos=document.querySelectorAll('.punto');const config={intervalo:7000,transicion:'transform 0.5s ease-in-out'};let currentIndex=1;let intervalo=null;let isAnimating=false;carrusel.style.transition=config.transicion;function updateCarousel(){if(isAnimating)return;isAnimating=true;const offset=-currentIndex*100;carrusel.style.transform=`translateX(${offset}%)`;puntos.forEach((punto,index)=>{punto.classList.toggle('activo',index===currentIndex);});tarjetas.forEach((tarjeta,index)=>{tarjeta.classList.toggle('active',index===currentIndex);});carrusel.addEventListener('transitionend',()=>{isAnimating=false;},{once:true});}function nextSlide(){if(isAnimating)return;currentIndex=(currentIndex+1)%tarjetas.length;updateCarousel();}function prevSlide(){if(isAnimating)return;currentIndex=(currentIndex-1+tarjetas.length)%tarjetas.length;updateCarousel();}function goToSlide(index){if(isAnimating||index===currentIndex)return;currentIndex=index;updateCarousel();resetInterval();}function startInterval(){intervalo=setInterval(nextSlide,config.intervalo);}function resetInterval(){clearInterval(intervalo);startInterval();}function stopInterval(){clearInterval(intervalo);}tarjetas.forEach((tarjeta,index)=>{tarjeta.addEventListener('click',(e)=>{if(e.target.tagName==='A'||e.target.closest('a'))return;goToSlide(index);});});btnSiguiente.addEventListener('click',()=>{nextSlide();resetInterval();});btnAnterior.addEventListener('click',()=>{prevSlide();resetInterval();});puntos.forEach((punto,index)=>{punto.addEventListener('click',()=>{goToSlide(index);});});carrusel.addEventListener('mouseenter',stopInterval);carrusel.addEventListener('mouseleave',startInterval);updateCarousel();startInterval();});
+    </script>
+  </section>
+  <section id="acerca">
+    <div class="contenedor-nosotros">
+      <h2>¿Quiénes somos?</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+      </p>
+          <!--
+        <div class="bloque-texto">
+
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum                    </p>
+            </div>-->
+        <div class="imagen-superior">
+            <img src="https://www.adom.com.co/wp-content/uploads/2024/08/vision-ADOM.webp" alt="Ilustración Misión" />
+        </div>
+        
+    </div>
+
+    <!--
+    <div class="mision-vision">
+        <div class="mision">
+        <h3>Lorem Ipsum</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum                    </p>
+        </div>
+        <div class="vision">
+            <h3>Lorem Ipsum</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum                    </p>
+        </div>
+    </div>
+    -->
+    <div class="imagen-inferior" style="margin-bottom:80px">
+      <img src="https://www.adom.com.co/wp-content/uploads/2024/08/Mision-de-ADOM.webp" alt="Ilustración Visión" />
+    </div>
+  </section>
+  <section id="stats">
+    <div class="stats-container">
+      <div class="stat-item">
+        <h3>+8 clientes</h3>
+        <p>satisfechos con los resultados</p>
+      </div>
+      <div class="stat-item">
+        <h3>+3 Años</h3>
+        <p>de Experiencia</p>
+      </div>
+      <div class="stat-item">
+        <h3>9.5/10</h3>
+        <p>nuestra puntuación</p>
+      </div>
+      <div class="stat-item">
+        <h3>Somos</h3>
+        <p>la mejor solución</p>
+      </div>
+    </div>
+  </section>
+  <section id="publicaciones">
+    <div class="feed-header">
+      <h2>Últimas publicaciones</h2>
+      <hr style="border: 2px solid #0491a1a9 ; width: 20%;">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+      </p>
+    </div>
+    <div class="bento-limitador">
+      <div class="bento-grid">
+        <article class="bento-item tall">
+          <span></span>
+          <img src="https://thumbs.dreamstime.com/b/mujer-joven-de-negocios-segura-s%C3%AD-misma-pie-en-el-retrato-vertical-del-cargo-feliz-y-ceo-l%C3%ADder-empresarial-abogada-afroamericana-280193899.jpg" alt="Post 1" style="object-fit: cover; object-position: center; width: 100%; height: 100%;">
+          <div class="bento-texto">
+            <h3>Lorem ipsum dolor ati amet</h3>
+            <a href="publicaciones/prueba.html">Leer más →</a>
+          </div>
+        </article>
+
+        <article class="bento-item">
+          <span></span>
+          <img src="https://st2.depositphotos.com/3889193/8014/i/450/depositphotos_80147336-stock-photo-business-teamwork.jpg" alt="Post 2">
+          <div class="bento-texto">
+            <h3>Lorem ipsum dolor ati amet</h3>
+            <a href="#">Leer más →</a>
+          </div>
+        </article>
+
+        <article class="bento-item wide">
+          <span></span>
+          <img src="https://www.bizneo.com/blog/wp-content/uploads/2020/01/vuca-810x455.jpg" alt="Post 3">
+          <div class="bento-texto">
+            <h3>Lorem ipsum dolor ati amet</h3>
+            <a href="#">Leer más →</a>
+          </div>
+        </article>
+
+        <article class="bento-item">
+          <span></span>
+          <img src="https://www.sternaliza.com/wp-content/uploads/2017/05/dest_cooperacion-empresarial.jpg" alt="Post 4">
+          <div class="bento-texto">
+            <h3>Lorem ipsum dolor ati amet</h3>
+            <a href="#">Leer más →</a>
+          </div>
+        </article>
+        
+        <article class="bento-item wide last">
+          <span></span>
+        </article>
+      </div>
+    </div>
+    <!-- <div id="newsletter">
+      <div class="newsletter-container">
+        <div class="newsletter-content">
+          <h2>Recibe una propuesta excelente</h2>
+          <p>Suscríbete y recibe contenido exclusivo, ofertas especiales y<br> las últimas novedades directamente en tu bandeja de entrada.</p>
         </div>
 
-        <main>
-            <br><br><br>
-            <!--<section id="servicios">
-                <h2>Servicios</h2>
-                <p>Servicios de la empresa.</p>
-            </section>
-            <section id="nosotros">
-                <h2>Nosotros</h2>
-                <p>Información de la empresa.</p>
-            </section>
-            <section id="contacto-card">
-                <h2>Contacto</h2>
-                <p>Información y enlaces de contacto.</p>
-            </section>-->
-
-            <section id="prev" style="width: 100%; height: auto;">
-                <iframe src="../index.html" style="width: 100%; height: 800px; border: none;"></iframe>
-            </section>
-        </main>
-        <br><br><br>
-
-        <div id="footer"></div>
-        <a href="https://wa.me/573204522789" class="whatsapp-button" target="_blank">
-            <img src="img/wtts.svg">
-        </a>
-        
-        <div id="mensajeRCP">L&H Outsourcing SAS &copy; Con todos los derechos reservados</div>
-        <script>
-            document.addEventListener('contextmenu', function (e) {
-                e.preventDefault();
-                const m = document.getElementById('mensajeRCP');
-                m.style.left = e.pageX + 10 + 'px';
-                m.style.top = e.pageY + 10 + 'px';
-                m.style.display = 'block';
-                document.addEventListener('mousemove', f);
-                setTimeout(() => {
-                    m.style.display = 'none';
-                    document.removeEventListener('mousemove', f);
-                }, 3000);
-            });
-    
-            function f(e) {
-                const m = document.getElementById('mensajeRCP');
-                m.style.left = e.pageX + 10 + 'px';
-                m.style.top = e.pageY + 10 + 'px';
-            }
-    
-            document.addEventListener('click', function () {
-                const m = document.getElementById('mensajeRCP');
-                m.style.display = 'none';
-                document.removeEventListener('mousemove', f);
-            });
-    
-            // Prevenir la selección de imágenes
-            document.addEventListener('selectstart', function (e) {
-                if (e.target.tagName.toLowerCase() === 'img') {
-                    e.preventDefault();
-                }
-            });
-    
-            // Prevenir el arrastre de imágenes
-            document.querySelectorAll('img').forEach(function (img) {
-                img.setAttribute('draggable', 'false');
-                img.addEventListener('dragstart', function (e) {
-                    e.preventDefault();
-                });
-            });
-            // Prevent Ctrl+C (Copy)
-            document.addEventListener('keydown', function (e) {
-                if (e.ctrlKey && e.key === 'c') {
-                    e.preventDefault();
-                    const m = document.getElementById('mensajeRCP');
-                    m.style.left = e.pageX + 10 + 'px';
-                    m.style.top = e.pageY + 10 + 'px';
-                    m.style.display = 'block';
-                    setTimeout(() => {
-                        m.style.display = 'none';
-                    }, 3000);
-                }
-            });
-        </script>
-    </body>
+        <form action="#" method="POST" class="newsletter-form">
+          <div class="newsletter-field">
+            <input type="email" id="email-newsletter" name="email" placeholder="Ingresa tu mejor correo" required>
+            <button type="submit" class="newsletter-button">
+              <span>Quiero suscribirme</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div> -->
+  </section>
+  <section id="contacto"></section>
+  <div id="footer"></div>
+  <div id="backToTop" class="oculto">Volver arriba<script src="includes/volver.js"defer></script></div>
+  <a href="https://wa.me/573204522789" class="whatsapp-button" target="_blank"><img src="img/wtts.svg"><script src="includes/whatsapp.js" defer></script></a>
+  <div id="scrollProgressBar"><script src="includes/scroll.js" defer></script></div>
+</body>
 </html>
-
-    <!--<script>
-        // Prevenir la selección en dispositivos móviles
-        document.addEventListener('touchstart', function (e) {
-            e.preventDefault();  // Prevenir la selección del texto en pantallas táctiles
-        });
-        // Opcionalmente,  agregar una advertencia
-        // document.addEventListener('selectstart', function (e) {
-        //     alert("La selección de texto está deshabilitada en este sitio.");
-        //     e.preventDefault();  // Evitar la acción de seleccionar texto
-        // });
-    </script>-->
-
-

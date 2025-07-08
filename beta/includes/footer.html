@@ -1,64 +1,85 @@
 <style>
-    footer {display: flex;flex-direction: column;text-align: center;background: #225a72;color: #fff;overflow-x: hidden;position: relative;bottom: 0;}
-    footer {border-top:solid 8px #97b5c0;}
-    .footer-content{display:flex;flex-direction: row;justify-content:space-evenly;overflow-x: hidden;text-align: left;padding: 18px 0;}
-    .set{width:140px; cursor:pointer;}
+  footer {display: flex;flex-direction: column;text-align: center;background: #225870;color: #fff;overflow-x: hidden;position: relative;bottom: 0;border-top: solid 9px #97b5c0;}
 
-    .set h3{text-decoration: underline 2px #fff;line-height: 10px;}
-    .set ul {list-style: none;margin: 0;padding: 0;}
-    .set ul li {margin: 0;padding: 0;padding: 4px 0;}
-    .set ul li a,
-    .set ul li p {font-size: 12px;color: #d9e5eb;text-decoration: none;transition: font-size 0.2s ease-in-out;}
-    .set ul li a:hover,
-    .set ul li p:hover {font-size: 12.5px;color: #fff;}
+  .footer-content {display: flex;flex-direction: row;justify-content: space-around;max-width: 1200px;gap: auto;padding: 20px 0;width: 80%;margin: 0 auto;}
+  .set {flex: 1;text-align: left;cursor: pointer;}
+  .set h3 {text-decoration: none;line-height: 10px;cursor:default;}
+  .set ul {list-style: none;margin: 0;padding: 0;}
+  .set ul li {margin: 0;padding: 4px 0;}
+  .set ul li a,
+  .set ul li p {font-size: 12px;color: #d9e5eb;text-decoration: none;transition: font-size 0.2s ease-in-out;}
+  .set ul li a:hover,
+  .set ul li p:hover {font-size: 12.5px;color: #fff;}
 
-    .lastbar{background: #345461;padding:4px 0;font-size: 11px;color: #97b5c0;cursor:none;}
-    .lastbar p span{font-size:15px;}
-
-    @media (max-width: 950px) {
-    footer{overflow-x: hidden;}
-        .footer-content{overflow-x: hidden;flex-direction: column;align-items: center;}
-        .lastbar{text-align: center;}
-        .set{width:280px}
-    }
+  .lastbar {background: #345461;padding: 4px 0;font-size: 11px;color: #97b5c0;text-align: center;cursor:not-allowed}
+    
+  @media (max-width: 950px) {
+    .footer-content {flex-direction: column;align-items: center;text-align: center;}
+    .set {max-width: 280px;width: 100%;}
+    .set img{display: none;}
+    .lastbar {text-align: center;}
+  }
+  #mensajeRCP {
+      position: absolute;
+      background-color: var(--c1);
+      opacity: 0.9;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      display: none;
+      font-size: 12px;
+      pointer-events: none;
+      z-index: 9999999999999;
+  }
+  @media (max-width:950px) {
+      body{
+          user-select: none;/*CSS para navegadores modernos*/
+          -webkit-user-select: none;/*Safari*/
+          -moz-user-select: none;/*Firefox*/
+          -ms-user-select: none;/*Edge/Explorer*/
+      }
+  }
 </style>
+  
+<footer>
+  <div class="footer-content">
+    <div class="set">
+      <ul><li><a href="/"><img src="./img/icon-footer.webp" alt="L&H Icon" style="width:132px;"></li></a></ul>
+    </div>
 
-<footer id="footer">
-    <div class="footer-content">
-        <div class="set">
-            <h3>Contáctanos</h3>
-            <ul>
-                <li><a href="https://wa.me/573204522789">Cel: (320) 452 2789</a></li>
-                <li><a href="mailto:contacto@lhoutsourcing.com">contacto@lhoutsourcing.com</a></li>
-                <li><a href="habeasdata.html">Bogotá - Colombia</a></li>
-            </ul>
-        </div>
-        <div class="set">
-            <h3>Portafolio</h3>
-            <ul>
-                <li><a href="habeasdata.html">Servicios IPS</a></li>
-                <li><a href="habeasdata.html">Servicios Particulares</a></li>
-                <li><a href="habeasdata.html">Entes Territoriales</a></li>
-            </ul>
-        </div>
-        <div class="set">
-            <h3>Publicaciones</h3>
-            <ul>
-                <li><a href="habeasdata.html">Blog Digital</a></li>
-                <li><a href="habeasdata.html">Redes Sociales</a></li>
-                <li><a href="habeasdata.html">Datos Clave</a></li>
-            </ul>
-        </div>
-        <div class="set">
-            <h3>Sitio Web</h3>
-            <ul>
-                <li><a href="https://mail.zoho.com/zm" target="_blank">Acceso Webmail</a></li>
-                <li><a href="habeasdata.html">Habeas Data</a></li>
-                <li><a href="habeasdata.html">Mapa del Sitio</a></li>
-            </ul>
-        </div>
+    <div class="set">
+      <h3>Contáctanos</h3>
+      <ul>
+          <li><a href="https://wa.me/573204522789" target="_blank">Cel: (320) 452 2789</a></li>
+          <li><a href="mailto:contacto@lhoutsourcing.com">contacto@lhoutsourcing.com</a></li>
+          <li><a href="index.html#contacto">Bogotá - Colombia</a></li>
+      </ul>
     </div>
-    <div class="lastbar">
-        <p><span>L&H Outsourcing SAS</span><br>&copy; Con todos los derechos reservados</p>
+
+    <div class="set">
+      <h3>Portafolio</h3>
+      <ul>
+          <li><a href="index.html#servicios">Servicios IPS</a></li>
+          <li><a href="index.html#servicios">Servicios Particulares</a></li>
+          <li><a href="index.html#servicios">Entes Territoriales</a></li>
+      </ul>
     </div>
+
+    <div class="set">
+      <h3>Sitio Web</h3>
+      <ul>
+          <li><a href="https://mail.zoho.com/zm" target="_blank">Acceso Webmail</a></li>
+          <li><a href="habeasdata.html">Habeas Data</a></li>
+          <li><a href="habeasdata.html">Mapa del Sitio</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="lastbar">
+    <p>&copy; 2025 L&H Outsourcing SAS. Todos los derechos reservados.</p>
+  </div>
 </footer>
+  
+
+<!-- RCP -->
+<div id="mensajeRCP">&copy; L&H Outsourcing SAS. Con todos los derechos reservados</div>

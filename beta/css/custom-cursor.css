@@ -1,0 +1,52 @@
+.custom-cursor {
+    position: fixed;
+    width: 40px;
+    height: 38px; 
+    background: var(--c3);
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 0.2s ease-out, background-color 0.3s ease;
+    box-shadow: 0 0 10px var(--c2), 0 0 20px var(--c2);
+    opacity: 0.85;
+    clip-path: polygon(
+        50% 0%,
+        90% 25%,
+        90% 75%,
+        50% 100%,
+        10% 75%,
+        10% 25%
+    );
+        border: 12px outset var(--c2);
+
+}
+.custom-cursor::before {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    top: 20%;
+    left: 20%;
+    background-color: var(--c3);
+    clip-path: polygon(
+        50% 0%,
+        90% 25%,
+        90% 75%,
+        50% 100%,
+        10% 75%,
+        10% 25%
+    );
+}
+.custom-cursor::after {
+  content: '✔'; 
+  /* ✔ */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+  pointer-events: none;
+  text-shadow: 0 0 15px 5px white, 0 0 30px 10px white;
+}
